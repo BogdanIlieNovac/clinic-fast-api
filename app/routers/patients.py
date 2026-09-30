@@ -24,7 +24,7 @@ def get_patient(patient_id:int, db:Session = Depends(get_db)):
 @router.patch("/{patient_id}", response_model=schemas.PatientOut)
 def update_patient(
     patient_id:int,
-    payload:schemas.PatientUptate, 
+    payload:schemas.PatientUpdate, 
     db:Session = Depends(get_db)
 ):
     patient = db.get(models.Patient, patient_id)
